@@ -1,0 +1,40 @@
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='wpage_modded.css') }}">  
+<nav>
+   <!--logo--------------->
+   
+   <!--menu--btn----------------->
+  
+   <!--menu-------------->
+   <ul class="menu">
+	   <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+	   <li><a href="{{ url_for('page.movie_handler') }}">Movies</a></li>
+   </ul>
+   <!--search------------->
+</nav>
+
+
+<!--latest-movies---------------------->
+<div id="latest">
+   <h2 class="latest-heading">Watchlist</h2>
+   <!--slider------------------->
+		{% for movie in movies %}
+		   <div class="latest-box">
+			   <!--img-------->
+			   <div class="latest-b-img">
+				   <img src="{{ movie['picture'] }}">
+			   </div>
+			   <!--text---------->
+			   <div class="latest-b-text">
+				   <strong>{{ movie['title'] }}</strong>
+				   <p>{{ movie['genre'] }} Movie</p>
+			   </div>
+		   </div>
+<!--slide-box-2------------------>
+
+	   		<div class="navig">
+		   		<button><a href="{{ url_for('page.wremover', id=movie['mid']) }}"> x </a></button>
+	   		</div>
+		{% endfor %}
+   
+</div>

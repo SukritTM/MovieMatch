@@ -1,0 +1,31 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">    
+</head>    
+<body>    
+      
+    <div class="login">    
+    <form id="login" method="post">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="username" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password
+        </b>    
+        </label>    
+        <input type="Password" name="password" id="Pass" placeholder="Password">    
+        <br><br>
+        <input type="submit" name="log" id="log" value="Log In Here"> 
+      
+        <br><br>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+    </form>
+</div>
+{% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+{% endfor %}
+</body>    
+</html>

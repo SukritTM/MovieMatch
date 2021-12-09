@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mvpage_modded.css') }}">  
+<nav>
+   <!--logo--------------->
+   
+   <!--menu--btn----------------->
+  
+   <!--menu-------------->
+   <ul class="menu">
+	   <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+	   <li><a href="{{ url_for('page.watchlist') }}">Watchlist</a></li>
+   </ul>
+   <!--search------------->
+</nav>
+
+
+<!--latest-movies---------------------->
+<div id="latest">
+   <h2 class="latest-heading">Suggested</h2>
+   <!--slider------------------->
+		{% if movie %}
+		   <div class="latest-box">
+			   <!--img-------->
+			   <div class="latest-b-img">
+				   <img src="{{ movie['picture'] }}">
+			   </div>
+			   <!--text---------->
+			   <div class="latest-b-text">
+				   <strong>{{ movie['title'] }}</strong>
+				   <p>{{ movie['genre'] }} Movie</p>
+			   </div>
+		   </div>
+<!--slide-box-2------------------>
+
+	   		<div class="navig">
+		   		<button><a href="{{ url_for('page.movie_handler', id=mid) }}"> << </a></button>
+		   		<button><a href="{{ url_for('page.add', id=movie['mid']) }}"> >> </a></button>
+	   		</div>
+	   	{% else %}
+	   		<br><br><h3>All out of movies!</h3>
+		{% endif %}
+   
+</div>
