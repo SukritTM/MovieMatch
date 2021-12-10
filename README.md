@@ -21,6 +21,7 @@ Now, we can install our dependencies. To do so, type
 Once the dependencies have been installed, we can run the app. To do so, first run
 
 `set FLASK_APP=src`
+`flask init-db`
 
 And then,
 
