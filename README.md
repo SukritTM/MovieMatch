@@ -1,10 +1,12 @@
 # MovieMatch
+A simple web application for recommending movies to a user, in a dating-app-style format. The hope is that this make the process of choosing a movie to watch a little easier.
+
 ## Run Instructions
 These instructions assume you have a working installation of python 3.9 which is added to PATH on a machine running Windows 10.
 
 Fork this repository, then clone it to your local machine.
 
-Although it is not required, it is reccommended to start a python virtual environment in which to install your dependencies. To do so, navigate to the root folder of this repository with `cd moviematch`, and type
+Although it is not required, it is recommended to start a python virtual environment in which to install your dependencies. To do so, navigate to the root folder of this repository with `cd moviematch`, and type
 
 `python -m venv <your-env-name>`
 
